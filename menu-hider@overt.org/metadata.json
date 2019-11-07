@@ -1,0 +1,10 @@
+{
+  "shell-version": ["3.34"],
+  "uuid": "menu-hider@overt.org",
+  "url": "https://github.com/philipl/menu-hider",
+  "settings-schema": "org.gnome.shell.extensions.menu-hider",
+  "gettext-domain": "menu-hider",
+  "version": 1,
+  "name": "Menu Hider",
+  "description": "This extension will hide the Arc Menu when maximising a window with Unite."
+}
