@@ -52,7 +52,7 @@ var MenuHiderExtension = GObject.registerClass(
       if (controls) {
         let visible = controls.container.visible;
 
-        let activitiesButton = Main.panel.statusArea['arc-menu']
+        let activitiesButton = Main.panel.statusArea['ArcMenu']
         if (activitiesButton) {
           if (visible) {
             activitiesButton.container.hide()
