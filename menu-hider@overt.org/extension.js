@@ -21,7 +21,7 @@ var MenuHiderExtension = GObject.registerClass(
     }
 
     _enable() {
-      let controls = Main.panel.statusArea['uniteWindowControls'];
+      const controls = Main.panel.statusArea['uniteWindowControls'];
       if (controls && this.uniteChangedId === 0) {
         this.uniteChangedId = controls.container.connect('notify::visible', () => {
           this._toggle();
@@ -31,7 +31,7 @@ var MenuHiderExtension = GObject.registerClass(
 
     _disable() {
       if (this.uniteChangedId > 0) {
-        let controls = Main.panel.statusArea['uniteWindowControls'];
+        const controls = Main.panel.statusArea['uniteWindowControls'];
         if (controls) {
           controls.container.disconnect(this.uniteChangedId);
         }
@@ -48,11 +48,11 @@ var MenuHiderExtension = GObject.registerClass(
     }
 
     _toggle() {
-      let controls = Main.panel.statusArea['uniteWindowControls'];
+      const controls = Main.panel.statusArea['uniteWindowControls'];
       if (controls) {
-        let visible = controls.container.visible;
+        const visible = controls.container.visible;
 
-        let activitiesButton = Main.panel.statusArea['ArcMenu']
+        const activitiesButton = Main.panel.statusArea['ArcMenu']
         if (activitiesButton) {
           if (visible) {
             activitiesButton.container.hide()
