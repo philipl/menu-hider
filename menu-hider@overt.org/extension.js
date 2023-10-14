@@ -1,9 +1,9 @@
-const GObject         = imports.gi.GObject
-const Main            = imports.ui.main
-const MenuHider       = imports.misc.extensionUtils.getCurrentExtension()
+import GObject from 'gi://GObject';
+import {Main} from './dependencies/shell/ui.js';
+import {Extension} from './dependencies/shell/extensions/extension.js';
 
-var MenuHiderExtension = GObject.registerClass(
-  class MenuHiderExtension extends GObject.Object {
+const MenuHider = GObject.registerClass(
+  class MenuHider extends GObject.Object {
 
     _init() {
       this.uniteChangedId = 0;
@@ -65,11 +65,15 @@ var MenuHiderExtension = GObject.registerClass(
   }
 )
 
-function enable() {
-  global.menuHider = new MenuHiderExtension()
-}
+let menuHider;
 
-function disable() {
-  global.menuHider.destroy()
-  global.menuHider = null
+export default class MenuHiderExtension extends Extension.Extension {
+    enable() {
+        menuHider = new MenuHider();
+    }
+
+    disable() {
+        menuHider?.destroy();
+        menuHider = null;
+    }
 }
