@@ -1,5 +1,5 @@
 {
-  "shell-version": ["45"],
+  "shell-version": ["45", "46"],
   "uuid": "menu-hider@overt.org",
   "url": "https://github.com/philipl/menu-hider",
   "settings-schema": "org.gnome.shell.extensions.menu-hider",
